@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class Cajero { 
 
     public static void main(String[] args) {
+        //Creación de objetos teclado y teclado1
         Scanner teclado = new Scanner(System.in);
         Scanner teclado1 = new Scanner(System.in);
 
@@ -53,19 +54,26 @@ public class Cajero {
                         balance -= cantidad;
                         System.out.println("La tranferencia de $ " + cantidad + " se realizó con éxito");
                     } else {
-                        System.out.println("Fondos insuficientes para realizar la operación");
-                        
+                        System.out.println("Fondos insuficientes para realizar la operación");                        
                     }
                     break;
 
+
                 case "4":
                     System.out.println("Gracias por usar nuestro cajero automático");
+                    System.exit(0);
                     break;
+                
                 default:
                     System.out.println("Opción inválida. Por favor intente nuevamente.");
             }
             System.out.println("¿Quiere volver al MENU? SI-NO");
             seguir = teclado1.nextLine();
+            if (seguir.equalsIgnoreCase("no")) {
+                System.out.println("¿No quiere realizar otra operación?");
+                seguir = teclado1.nextLine();
+
+            }
             
             //Borra consola
             System.out.print("\033[H\033[2J");  
