@@ -67,7 +67,7 @@ public class Cajero {
                 default:
                     System.out.println("Opción inválida. Por favor intente nuevamente.");
             }
-            System.out.println("¿Quiere volver al MENU? SI-NO");
+            System.out.println("¿Quiere volver al MENU? si/NO");
             seguir = teclado1.nextLine();
             if (seguir.equalsIgnoreCase("no")) {
                 System.out.println("¿No quiere realizar otra operación?");
