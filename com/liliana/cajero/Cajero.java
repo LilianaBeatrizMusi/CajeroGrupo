@@ -10,14 +10,14 @@ import java.util.Scanner;
 
 public class Cajero { 
 
-    public static void main(String[] args) {
+    public void Caja() {
         //Creación de objetos teclado y teclado1
         Scanner teclado = new Scanner(System.in);
         Scanner teclado1 = new Scanner(System.in);
 
         //Declaración e inicialización de variables
-        double balance = 0.00;
-        double cantidad;
+        Cuenta cuenta = new Cuenta();
+              
         String opcion;
         String seguir = "si"; //variable para generar un bucle hasta que sea diferente a "SI"
 
@@ -34,31 +34,18 @@ public class Cajero {
             //Proceso con switch
             switch (opcion) {
                 case "1":
-                    System.out.println("El saldo es de: $" + balance);
+                    System.out.println("El saldo es de: $" + cuenta.verBalance());
                     break;
                 case "2":
                     System.out.print("Ingrese el monto que desea depositar: $ ");
-                    cantidad = teclado.nextDouble();
-                    if (cantidad > 0) {
-                        balance += cantidad;
-                        System.out.println("Depositado: $" + cantidad);
-                    } else {
-                        System.out.println("Monto a depositar inválido");
-                        
-                    } 
+                    double depositarCantidad = teclado.nextDouble();
+                    cuenta.depositar(depositarCantidad);                    
                     break;               
                 case "3":
                     System.out.print("Ingrese el monto a transferir: $ ");
-                    cantidad = teclado.nextDouble();
-                    if (cantidad > 0 && cantidad <= balance) {
-                        balance -= cantidad;
-                        System.out.println("La tranferencia de $ " + cantidad + " se realizó con éxito");
-                    } else {
-                        System.out.println("Fondos insuficientes para realizar la operación");                        
-                    }
+                    double retirarCantidad = teclado.nextDouble();
+                    cuenta.retirar(retirarCantidad);
                     break;
-
-
                 case "4":
                     System.out.println("Gracias por usar nuestro cajero automático");
                     System.exit(0);

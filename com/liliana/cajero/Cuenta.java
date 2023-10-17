@@ -1,7 +1,4 @@
-
-
-
-package com.liliana.cuenta;
+package com.liliana.cajero;
 
 /**
  *
@@ -9,12 +6,13 @@ package com.liliana.cuenta;
  */
 
 //Creación de métodos 
-class Cuenta {
+public class Cuenta {
     //Declaración e inicialización de variable
     private double balance;
 
-    public Cuenta() {
+    public double resetBalance() {
         balance = 0.0;
+        return balance;
     }
 
     public double verBalance() {
@@ -24,7 +22,7 @@ class Cuenta {
     public void depositar(double cantidad) {
         if (cantidad > 0) {
             balance += cantidad;
-            System.out.println("Depositado: $ + cantidad");
+            System.out.println("Depositado: $" + cantidad);
         } else {
             System.out.println("Monto a depositar inválido");
         }

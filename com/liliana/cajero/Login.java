@@ -1,11 +1,9 @@
-package com.liliana.login;
+package com.liliana.cajero;
 
-/**
- * @@author Liliana Musi
- */
 import java.util.Scanner;
 
-public class LoginPrueba {
+public class Login {
+
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         String usuarioCorrecto = "usuario"; // usuario correcto
@@ -23,20 +21,21 @@ public class LoginPrueba {
                 System.out.println("***********************************");
                 System.out.println("¡Bienvenido al Cajero Automático!");
                 System.out.println("***********************************");
-                com.liliana.cajero.Cajero.main(null);    
+                Cajero cajero = new Cajero();
+                cajero.Caja();
                 break; // Sale del bucle si las credenciales son correctas.
-                
+
             } else {
                 System.out.println("Su usuario o contraseña son incorrectos.");
                 intentos--;
                 System.out.println("Le restan " + intentos + " intentos.");
-                
+
             }
         }
         //Simulacro de bloqueo de la cuenta
         if (intentos == 0) {
             System.out.println("****Inténtenlo más tarde***");
-                  
+
         }
         teclado.close();
     }
