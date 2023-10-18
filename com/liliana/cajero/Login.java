@@ -4,10 +4,8 @@ import java.util.Scanner;
 
 public class Login {
 
-    public static void main(String[] args) {
+    public static void login() {
         Scanner teclado = new Scanner(System.in);
-        String usuarioCorrecto = "usuario"; // usuario correcto
-        String contraseñaCorrecta = "contraseña"; // contraseña correcta
         int intentos = 3; // Número de intentos permitidos
 
         while (intentos > 0) {
@@ -17,7 +15,10 @@ public class Login {
             System.out.print("Ingrese su contraseña: ");
             String contraseñaIngresada = teclado.nextLine();
 
-            if (usuarioIngresado.equals(usuarioCorrecto) && contraseñaIngresada.equals(contraseñaCorrecta)) {
+            boolean isUserExist = Database.isUserExists(usuarioIngresado, contraseñaIngresada);
+
+            System.out.println("isUserExist: " + isUserExist);
+            if (isUserExist) {
                 System.out.println("***********************************");
                 System.out.println("¡Bienvenido al Cajero Automático!");
                 System.out.println("***********************************");
