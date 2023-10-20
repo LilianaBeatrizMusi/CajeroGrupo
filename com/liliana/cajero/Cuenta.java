@@ -31,7 +31,7 @@ public class Cuenta {
     public void retirar(double cantidad) {
         if (cantidad > 0 && cantidad <= balance) {
             balance -= cantidad;
-            System.out.println("Retirado: $" + cantidad);
+            System.out.println("Transferido: $" + cantidad);
         } else {
             System.out.println("Fondos insuficientes para realizar la operación");
         }
