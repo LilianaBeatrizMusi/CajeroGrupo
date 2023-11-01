@@ -2,14 +2,15 @@ package com.liliana.cajero;
 
 import java.util.Scanner;
 
-import javax.xml.crypto.Data;
-
 public class SingUp {
     public static void singUp() {
+        //Instancia de la clase Scanner
         Scanner teclado = new Scanner(System.in);
+       //Definición de variables
         String usuario;
         String contrasena;
 
+        //Procedimiento 
         do {
             System.out.print("Ingrese su usuario: ");
             usuario = teclado.nextLine();

@@ -3,6 +3,7 @@ package com.liliana.cajero;
 import java.util.ArrayList;
 
 public class Database {
+    //Creación de Arraylist
     private static ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
     private static Database miBaseDeDatos;
 
@@ -24,7 +25,7 @@ public class Database {
 
             if (name.equals(usuario.getName()) && password.equals(usuario.getPassword())) {
                 _isUserExists = true;
-                break; // No need to continue checking
+                break; // No hay necesidad de seguir chequeando
             }
         }
 
