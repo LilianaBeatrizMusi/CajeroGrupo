@@ -17,7 +17,7 @@ public class Login {
 
             boolean isUserExist = Database.isUserExists(usuarioIngresado, contraseñaIngresada);
 
-            System.out.println("isUserExist: " + isUserExist);
+            //System.out.println("isUserExist: " + isUserExist);
             if (isUserExist) {
                 System.out.println("***********************************");
                 System.out.println("¡Bienvenido al Cajero Automático!");
